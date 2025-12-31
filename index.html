@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>پیام خوش آمد</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background: #fff0f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 420px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+      padding: 24px;
+      text-align: center;
+    }
+    .msg {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      color: #333;
+    }
+    button {
+      display: inline-block;
+      margin: 10px auto;
+      padding: 14px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ff7aa2, #ffd66b);
+      color: #4b2c3d;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(255, 122, 162, 0.35);
+      transition: transform 0.1s ease;
+    }
+    button:active { transform: scale(0.95); }
+    .hidden { display: none; }
+    .telegram {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 18px;
+      background: #eaf7ff;
+      color: #2b4772;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 6px 12px rgba(126,200,255,.25);
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="catImage" src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6" alt="گربه ناز">
+
+    <div id="message" class="msg">سلام بر دوستان بزرگوار به اینجا خوش آمدید 🌸</div>
+    <button id="btn1">بزن بریم 🚀</button>
+    <button id="btn2" class="hidden">بزن بخند 😂</button>
+    <button id="btn3" class="hidden">گریه ملی 😢</button>
+    <button id="btn4" class="hidden">روبیکا تایم 🤖</button>
+    <button id="btn5" class="hidden">لینک جادویی 🔗</button>
+    <div id="final" class="hidden">
+      <div class="msg">
+        خب حالا با لینک زیر به گروه باز گردید و نظر خود را در این مورد بگویید 💬  
+      </div>
+      <a class="telegram" href="https://t.me/+KPjFQyHm-_tkMmM8">ورود به گروه 📲</a>
+    </div>
+  </div>
+
+  <!-- فایل‌های صوتی -->
+  <audio id="sound1" src="boom1.mp3"></audio>
+  <audio id="sound2" src="boom2.mp3"></audio>
+  <audio id="sound3" src="boom3.mp3"></audio>
+  <audio id="sound4" src="boom4.mp3"></audio>
+  <audio id="sound5" src="boom5.mp3"></audio>
+
+  <script>
+    const msg = document.getElementById('message');
+    const catImage = document.getElementById('catImage');
+    const btn1 = document.getElementById('btn1');
+    const btn2 = document.getElementById('btn2');
+    const btn3 = document.getElementById('btn3');
+    const btn4 = document.getElementById('btn4');
+    const btn5 = document.getElementById('btn5');
+    const final = document.getElementById('final');
+
+    const sound1 = document.getElementById('sound1');
+    const sound2 = document.getElementById('sound2');
+    const sound3 = document.getElementById('sound3');
+    const sound4 = document.getElementById('sound4');
+    const sound5 = document.getElementById('sound5');
+
+    btn1.addEventListener('click', () => {
+      msg.textContent = 'امیدوارم از این گروه ساخته شده فیض ببرید 🌺 ما دلیل ساختن این سایت را در یک هدف می‌دانیم';
+      catImage.src = "https://images.unsplash.com/photo-1518791841217-8f162f1e1131";
+      sound1.play();
+      btn1.classList.add('hidden');
+      btn2.classList.remove('hidden');
+    });
+
+    btn2.addEventListener('click', () => {
+      msg.textContent = 'آن هدف این است که شما خوشحال بمانید و معاشرت بیشتری با هم داشته باشید 😊';
+      catImage.src = "https://images.unsplash.com/photo-1561948955-570b270e7c36";
+      sound2.play();
+      btn2.classList.add('hidden');
+      btn3.classList.remove('hidden');
+    });
+
+    btn3.addEventListener('click', () => {
+      msg.textContent = 'اما همانطور که می‌دانید می‌خواهند به دلایل سیاسی اینترنت را ملی کنند و ما بدبخت می‌شویم 😢😢';
+      catImage.src = "https://images.unsplash.com/photo-1555685812-4b943f1cb0eb";
+      sound3.play();
+      btn3.classList.add('hidden');
+      btn4.classList.remove('hidden');
+    });
+
+    btn4.addEventListener('click', () => {
+      msg.textContent = 'ما برای آن هم تفکر نمودیم و می‌گوییم که یک گروه در روبیکا هم بزنیم 🤝 تا در آنجا هم از همدیگر فیض ببریم';
+      catImage.src = "https://images.unsplash.com/photo-1605460375648-278bcbd579a6";
+      sound4.play();
+      btn4.classList.add('hidden');
+      btn5.classList.remove('hidden');
+    });
+
+    btn5.addEventListener('click', () => {
+      msg.textContent = 'خب حالا با لینک زیر به گروه باز گردید و نظر خود را در این مورد بگویید 💬';
+      catImage.src = "https://images.unsplash.com/photo-1619983081658-1b0b0a7f6e4b";
+      sound5.play();
+      btn5.classList.add('hidden');
+      final.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
